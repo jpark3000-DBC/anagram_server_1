@@ -1,11 +1,15 @@
+require 'pry'
+
 get '/' do
-  # Look in app/views/index.erb
+	# @cool = params[:anagrams]
+
   erb :index
 end
 
-get '/:word' do
-	# "hjghjg"
-	@word = params[:word]
-	"Show a list of anagrams for \"#{@word}\""
+
+post '/anagrams' do
+	@results = Word.anagram(params[:word])
 	erb :index
+
+	# redirect to("/?anagrams=#{@results}")
 end

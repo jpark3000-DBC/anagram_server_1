@@ -1,5 +1,26 @@
 <div class="container">
   <h1>Welcome to Anagram Machine!</h1>
   
-  <h2><%= @word %><h2>
+  <% if @results %>
+  	<table>
+  	<% @results.each do |obj| %>
+  		<tr>
+  			<td>
+  				<%= obj.word %>
+  			</td>
+  		</tr>
+  	<% end %>
+  	</table>
+  	<br>
+  <% end %>
+
+  <form action="/anagrams" method="post">
+    Enter a word:
+    <br>
+    <input type="text" name="word">
+    <input type="submit" value="Find Anagrams">
+  </form>
+
+
+
 </div>
