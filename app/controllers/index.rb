@@ -7,7 +7,7 @@ get '/' do
 end
 
 
-post '/anagrams' do
+post '/:word' do
 	@results = Word.anagram(params[:word])
 	erb :index
 
