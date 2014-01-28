@@ -1,5 +1,3 @@
-require 'pry'
-
 get '/' do
 	# @cool = params[:anagrams]
 
@@ -7,9 +5,7 @@ get '/' do
 end
 
 
-post '/:word' do
+post '/anagrams' do
 	@results = Word.anagram(params[:word])
 	erb :index
-
-	# redirect to("/?anagrams=#{@results}")
 end
